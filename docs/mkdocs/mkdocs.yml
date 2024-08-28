@@ -21,7 +21,6 @@ theme:
     primary: black
     accent: light blue
 plugins:
-  - mermaid2
   - search
   - awesome-pages
   - enumerate-headings
