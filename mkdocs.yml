@@ -1,0 +1,52 @@
+site_name: Sebastian's mkdocs test  
+repo_url: https://github.com/numb3r23/test-mkdocs
+docs_dir: '.'
+site_dir: '../site'
+theme:
+  language: en
+  features:
+    - content.code.annotation
+    - content.code.copy
+    - content.tab.link
+    - toc.integrate
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+  name: material
+  icon:
+    edit: material/pencil 
+    view: material/eye
+    repo: fontawesome/brands/github 
+  palette:
+    scheme: slate
+    primary: black
+    accent: light blue
+plugins:
+  - search
+  - awesome-pages
+  - enumerate-headings
+
+markdown_extensions:
+  - pymdownx.critic   # {--deleted--}, {++added++}, {~~1~>2 is a pair~~}, {==Highlighting==}, {>>inline comments<<}
+  - pymdownx.caret    # ^^Insert me^^ (underline), A^T^A (superscript)
+  - pymdownx.mark     # ==This was marked== (highlight)
+  - pymdownx.tilde    # ~~This was deleted~~ (strikethrough), H~2~O (subscript)
+  - pymdownx.keys     # ++cmd+ctrl+alt+del++ 
+  - def_list          # - [ ], - [x], 1., ...
+  - tables            # | Tables | Are | Cool |
+  - footnotes         # here [^1] is the link. later: [^1]: blah blah blah.
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+        # make exceptions to highlighting of code:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
