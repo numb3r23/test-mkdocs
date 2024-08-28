@@ -1,5 +1,6 @@
 site_name: Sebastian's mkdocs test  
 repo_url: https://github.com/numb3r23/test-mkdocs
+docs_dir: '.'
 theme:
   language: en
   features:
