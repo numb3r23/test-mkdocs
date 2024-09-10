@@ -1,0 +1,67 @@
+site_name: Sebastian's mkdocs test
+repo_url: https://github.com/numb3r23/test-mkdocs
+docs_dir: "./docs"
+site_dir: "../site"
+use_directory_urls: true
+theme:
+  language: en
+  features:
+    - content.code.annotation
+    - content.code.copy
+    - content.tab.link
+    - toc.integrate
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+  name: material
+  icon:
+    edit: material/pencil
+    view: material/eye
+    repo: fontawesome/brands/github
+  palette:
+    scheme: slate
+    primary: black
+    accent: light blue
+plugins:
+  - search
+  - print-site:
+      add_to_navigation: true
+      print_page_title: "Print Site"
+      add_print_site_banner: false
+      # Table of contents
+      add_table_of_contents: true
+      toc_title: "Table of Contents"
+      toc_depth: 6
+      # Content-related
+      add_full_urls: false
+      enumerate_headings: true
+      enumerate_figures: true
+      add_cover_page: true
+      cover_page_template: ""
+      path_to_pdf: ""
+      include_css: true
+      enabled: true
+markdown_extensions:
+  - pymdownx.critic # {--deleted--}, {++added++}, {~~1~>2 is a pair~~}, {==Highlighting==}, {>>inline comments<<}
+  - pymdownx.caret # ^^Insert me^^ (underline), A^T^A (superscript)
+  - pymdownx.mark # ==This was marked== (highlight)
+  - pymdownx.tilde # ~~This was deleted~~ (strikethrough), H~2~O (subscript)
+  - pymdownx.keys # ++cmd+ctrl+alt+del++
+  - def_list # - [ ], - [x], 1., ...
+  - tables # | Tables | Are | Cool |
+  - footnotes # here [^1] is the link. later: [^1]: blah blah blah.
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      # make exceptions to highlighting of code:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
